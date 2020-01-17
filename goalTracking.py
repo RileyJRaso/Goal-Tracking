@@ -67,7 +67,7 @@ if Action == "Create":
 if Action == "Insert":
     Goal_Name = input("Please enter the goal you worked towards:\n")
     Time_Spent = input("Please enter the time you spent towards it today:\n")
-    Date = input("Please enter today's date (Format = YYYYMMDD):\n")
+    Date = input("Please enter today's date (Format = YYYY,MM,DD):\n")
     command = "INSERT INTO Goals VALUES ('" + Goal_Name + "', " + Time_Spent + ", '" + Date + "')"
     Insert(command)
 
@@ -82,7 +82,7 @@ if Action == "ViewGoal":
             print(element)
 
 if Action == "ViewDate":
-    Date = input("Please enter the day you are looking for (Format = YYYYMMDD):\n")
+    Date = input("Please enter the day you are looking for (Format = YYYY,MM,DD):\n")
     command = "SELECT * FROM Goals WHERE Date LIKE '" + Date + "'"
     Result_List = View(command)
     if len(Result_List) == 0:
@@ -136,7 +136,7 @@ if Action == "GraphYear":
         print("there is no data for that Year")
     else:
         for element in Result_List:
-            Month = element[2][4:-2]
+            Month = element[2][5:-3]
             if Month in List_of_Dates:
                 for Date in List_of_Dates:
                     if Month == Date:
