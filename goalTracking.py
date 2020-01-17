@@ -6,6 +6,19 @@ import sys
 #connecting to database
 conn = sqlite3.connect('Goals.db')
 
+def printErrorMessage():
+    print("""\nERROR: The action requested is not possible with this application, the following are the currently avalible actions:\n
+             \t Create     --- This command should be run when the application is first run in order to create the sql database used within this application
+             \t Insert     --- This command is used to input data into the database, all information will be prompted from the user
+             \t ViewGoal   --- This command is used to view all entries of a certain Goal, the goal desired will be prompted from the user
+             \t ViewDate   --- This command is used to view all entries of a certain Date, the date desired will be prompted from the user
+             \t ViewMonth  --- This command is used to view all entries of a certain month, the month desired will be prompted from the user
+             \t ViewYear   --- This command is used to view all entries of a certain year, the year desired will be prompted from the user
+             \t GraphMonth --- This command is used to Graph the data collected in a certain month, the month desired will be promted from the user
+             \t GraphYear  --- This command is used to Graph the data collected in a certain year, the year desired will be promted from the user
+\nPlease enter action with the following format: python3 goalTracking.py [Action]\n
+             """)
+
 # Function definitions are here
 def Create(command):
     Server = conn.cursor()
@@ -40,20 +53,16 @@ def ViewYear():
     return Result_List;
 
 
+if len(sys.argv) < 2:
+    printErrorMessage()
+    conn.close()
+    exit()
+
 Action_List = ["Create", "Insert", "ViewGoal", "ViewDate", "ViewMonth", "ViewYear", "GraphMonth", "GraphYear"]
 Action = sys.argv[1]
 
 if Action not in Action_List:
-    print("""\nERROR:The action requested is not possible with this application, the following are the currently avalible actions:\n
-             \t Create     --- This command should be run when the application is first run in order to create the sql database used within this application
-             \t Insert     --- This command is used to input data into the database, all information will be prompted from the user
-             \t ViewGoal   --- This command is used to view all entries of a certain Goal, the goal desired will be prompted from the user
-             \t ViewDate   --- This command is used to view all entries of a certain Date, the date desired will be prompted from the user
-             \t ViewMonth  --- This command is used to view all entries of a certain month, the month desired will be prompted from the user
-             \t ViewYear   --- This command is used to view all entries of a certain year, the year desired will be prompted from the user
-             \t GraphMonth --- This command is used to Graph the data collected in a certain month, the month desired will be promted from the user
-             \t GraphYear  --- This command is used to Graph the data collected in a certain year, the year desired will be promted from the user
-             """)
+    printErrorMessage()
 
 if Action == "Create":
     print("Creating the Table...")
@@ -123,10 +132,10 @@ if Action == "GraphMonth":
             List_of_Dates.append(element[2])
             List_of_Minutes.append(element[1])
 
-    xpos = np.arange(len(List_of_Dates))
-    plt.xticks(xpos, List_of_Dates)
-    plt.bar(xpos, List_of_Minutes, width=0.6)
-    plt.show()
+        xpos = np.arange(len(List_of_Dates))
+        plt.xticks(xpos, List_of_Dates)
+        plt.bar(xpos, List_of_Minutes, width=0.6)
+        plt.show()
 
 if Action == "GraphYear":
     Result_List = ViewYear()
@@ -146,10 +155,10 @@ if Action == "GraphYear":
                 List_of_Dates.append(Month)
                 List_of_Minutes.append(element[1])
 
-    xpos = np.arange(len(List_of_Dates))
-    plt.xticks(xpos, List_of_Dates)
-    plt.bar(xpos, List_of_Minutes, width=0.6)
-    plt.show()
+        xpos = np.arange(len(List_of_Dates))
+        plt.xticks(xpos, List_of_Dates)
+        plt.bar(xpos, List_of_Minutes, width=0.6)
+        plt.show()
 
 #Still needs to be implemented
 #if Action == "GraphLifetime":
