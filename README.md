@@ -6,6 +6,10 @@ the program performs different tasks based on command line arguements given, in 
 
 # Installation
 
+in order to get the program run: git clone https://github.com/RileyJRaso/Goal-Tracking.git
+
+and than go to the folder that is cloned in order to run the program
+
 # Steps to run program
 
 # Future plans
