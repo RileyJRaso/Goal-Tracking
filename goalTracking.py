@@ -101,7 +101,12 @@ if Action == "ViewDate":
             print(element)
 
 if Action == "ViewMonth":
-    Result_List = ViewMonth()
+    Result_List = []
+    Year_Result_List = ViewYear()
+    Month_Result_List = ViewMonth()
+    for element in Month_Result_List:
+        if element in Year_Result_List and Month_Result_List:
+            Result_List.append(element)
     if len(Result_List) == 0:
         print("there is no data for that Month")
     else:
