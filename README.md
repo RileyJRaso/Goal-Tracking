@@ -95,4 +95,25 @@ Python goalTracking.py ViewYear
 
 once this action is selected the program will prompt the user for a year (meaning something like 2001) the program will query the database for all the data from that year and will display all the entries for that year in a list form.
 
+### GraphMonth
+
+this action is preformed as follows: 
+```bash
+Python goalTracking.py GraphMonth
+
+```
+
+once this action is selected the program will prompt the user for a year first, (meaning something like 2001) and than a month number (meaning something like 03) and the program will query the database for all the data from that month (in this example all data for 2001-03) and will display all the entries for that month in a grapth made through the matplotlib library. 
+
+
+### GraphYear
+
+this action is preformed as follows: 
+```bash
+Python goalTracking.py GraphYear
+
+```
+
+once this action is selected the program will prompt the user for a year (meaning something like 2001) the program will query the database for all the data from that year and will display all the entries for that year in a grapth made through the matplotlib library. 
+
 # Future plans
