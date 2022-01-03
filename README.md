@@ -117,3 +117,10 @@ Python goalTracking.py GraphYear
 once this action is selected the program will prompt the user for a year (meaning something like 2001) the program will query the database for all the data from that year and will display all the entries for that year in a grapth made through the matplotlib library. 
 
 # Future plans
+
+the following are a list of ideas for future features and changes to the program:
+
+- adding a Bash script to run the program so that all libraries are installed without the need of the user.
+- adding some more error catching to user input for dates
+- adding a method to change user input to lowercase so something like "Dance" and "dance" would be the same goal
+- adding a method to graph all the goals rather than just a set time line
