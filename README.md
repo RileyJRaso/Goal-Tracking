@@ -6,7 +6,23 @@ the program performs different tasks based on command line arguements given, in 
 
 # Installation
 
-in order to get the program run: git clone https://github.com/RileyJRaso/Goal-Tracking.git
+currently non of the libraries needed to run the program are installed by the program itself, in order to get all libraries needed run the following commands:
+
+### matplotlib library
+
+```bash
+pip install matplotlib
+
+```
+
+### numpy library
+
+```bash
+pip install numpy
+
+```
+
+once all the libraries are linstalled through pip, in order to get the program run: git clone https://github.com/RileyJRaso/Goal-Tracking.git
 
 and than go to the folder that is cloned in order to run the program
 
