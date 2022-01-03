@@ -48,12 +48,51 @@ Python goalTracking.py Insert
 
 ```
 
-once this is selected the program will prompt the user to enter what goal you want to enter time for. (IMPORTANT: capitals matter, "Dance" and "dance" are considered different goals and will be displayed as different goals which may mess with the graphs and display data)
+once this is selected the program will prompt the user to enter what goal you want to enter time for. **(IMPORTANT: capitals matter, "Dance" and "dance" are considered different goals and will be displayed as different goals which may mess with the graphs and display data)**
 
 once a goal is entered the user will be prompted to enter the time spent on that goal, this in my opinion should be in minutes however the user may select any time unit they want as long as it is consistent for all entries.
 
 finally the user will be prompted to enter the date, the format is given by the program.
 
 ### ViewGoal
+
+this action is preformed as follows: 
+```bash
+Python goalTracking.py ViewGoal
+
+```
+
+once this action is selected the program will prompt the user for the name of the goal to display, **(IMPORTANT: capitals matter, "Dance" and "dance" are considered different goals and will be displayed as different goals)** and the program will query the database for that goal and display it as a list to the user
+
+### ViewDate
+
+
+this action is preformed as follows: 
+```bash
+Python goalTracking.py ViewDate
+
+```
+
+once this action is selected the program will prompt the user for a full date, (meaning something like 2001-03-23) and the program will query the database for all the data from that date and will display all the entries for that day in a list form.
+
+### ViewMonth
+
+this action is preformed as follows: 
+```bash
+Python goalTracking.py ViewMonth
+
+```
+
+once this action is selected the program will prompt the user for a year first, (meaning something like 2001) and than a month number (meaning something like 03) and the program will query the database for all the data from that month (in this example all data for 2001-03) and will display all the entries for that month in a list form.
+
+### ViewYear
+
+this action is preformed as follows: 
+```bash
+Python goalTracking.py ViewYear
+
+```
+
+once this action is selected the program will prompt the user for a year (meaning something like 2001) the program will query the database for all the data from that year and will display all the entries for that year in a list form.
 
 # Future plans
